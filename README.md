@@ -1,4 +1,5 @@
 # weather_bot
+[@tesekkur_bot](http://t.me/tesekkur_bot)
 
 How to run:
 

@@ -1,0 +1,30 @@
+version: "3"
+services:
+  bot: 
+    build: .
+    ports: 
+      - 8000:8000
+    networks:
+      bot:
+        ipv4_address: 172.19.0.44
+    volumes:  # change /path/to/this/repo/weather_bot to your own path 
+      - /home/ubuntu/weather_bot/volumes/config_folder:/config:ro 
+      - /home/ubuntu/weather_bot/volumes/data_folder:/data:rw
+  
+      # syntax: -/localmachine/path/to/folder:/dockercontainer/path:ro 
+
+      # where 'ro' - means 'read only'
+      #       'rw' - means 'read and write' accsess
+      
+
+networks:
+  bot:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/24
+
+volumes:
+  config:
+  data:

@@ -4,6 +4,8 @@ services:
     build: .
     ports: 
       - 8000:8000
+    environment:
+      - ADMIN_ID=HERE_YOUR_TELEGRAM_ID
     networks:
       bot:
         ipv4_address: 172.19.0.44
